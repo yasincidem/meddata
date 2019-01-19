@@ -4,12 +4,13 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import ActivitiesScreen from '../screens/ActivitiesScreen';
+import RealActivitiesScreen from '../screens/RealActivitiesScreen';
 import MedicalScreen from '../screens/MedicalScreen';
 import InfoScreen from '../screens/InfoScreen';
 import RememberScreen from '../screens/RememberScreen';
 
 const ActivitiesStack = createStackNavigator({
-  Activities: ActivitiesScreen,
+  Activities: RealActivitiesScreen,
 });
 
 ActivitiesStack.navigationOptions = {

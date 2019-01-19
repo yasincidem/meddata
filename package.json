@@ -14,8 +14,12 @@
     "@expo/samples": "2.1.1",
     "expo": "^32.0.0",
     "firebase": "^5.7.3",
+    "moment": "^2.23.0",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-chip-view": "0.0.11",
+    "react-native-material-dialog": "^0.7.6",
+    "react-native-timeline-listview": "^0.2.3",
     "react-navigation": "^3.0.9"
   },
   "devDependencies": {

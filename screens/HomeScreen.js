@@ -52,23 +52,60 @@ export default class HomeScreen extends React.Component {
 
     return (
       <View style={styles.container}>
-        <Image
-          style={{width: 100, height: 100}}
-          source={{uri: 'https://img.icons8.com/color/96/000000/heart-health.png'}}
-        />
-      
+        <View>
+          <Image
+            style={{width: 100, height: 100}}
+            source={{uri: 'https://img.icons8.com/color/96/000000/heart-health.png'}}
+          />
+        </View>
+        <View>
+          <Text
+            style={{fontSize: 20}}
+            >
+            MedData
+          </Text>
+        </View>
 
-        <View style={styles.tabBarInfoContainer}>
-          <Button 
-            onPress={this.logIn} 
-            title="Log In"/>
+        <View style={{marginBottom: 25, marginTop: 150}}>
+        <Button
+          onPress={this.signInWithGoogleAsync} 
+          title="Sign in with Google"
+          color="#4285f4"/>
+        </View>
 
+        <View>
+        <Button
+          onPress={this.logInWithFacebook}
+          title="Sign in with Facebook"
+          color="#3f5aa9"/>
         </View>
       </View>
     );
   }
 
-  async logIn() {
+  //Sign in with google
+  async signInWithGoogleAsync() {
+    try {
+      const result = await Expo.Google.logInAsync({
+        androidClientId: '1037579995443-98po5lmm577ig0gfb667v1mofh0qpu50.apps.googleusercontent.com',
+        // iosClientId: YOUR_CLIENT_ID_HERE,
+        scopes: ['profile', 'email'],
+      });
+
+      if (result.type === 'success') {
+        // return result.accessToken;
+        Alert.alert('Logged in!');
+      } else {
+        // return {cancelled: true};
+      }
+    } catch(e) {
+      // return {error: true};
+    }
+  }
+
+
+  //Login with Facebook
+  async logInWithFacebook() {
     try {
       const {
         type,

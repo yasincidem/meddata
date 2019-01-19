@@ -8,7 +8,7 @@ import {
   Alert
 } from 'react-native';
 
-export default class HomeScreen extends React.Component {
+export default class ActivitiesScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
